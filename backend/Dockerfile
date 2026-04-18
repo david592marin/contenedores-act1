@@ -3,7 +3,7 @@ FROM node:25-alpine
 WORKDIR /app
 
 # Primero solo copiamos las dependencias, para crear capas de Docker mas eficientes
-COPY package*.json ./
+COPY package.json ./
 
 # Instalamos solo las dependencias de produccion. Tambien podriamos haberlo hecho con --only=production
 RUN npm install --omit=dev
