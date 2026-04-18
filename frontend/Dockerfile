@@ -2,8 +2,11 @@ FROM node:25-alpine
 
 WORKDIR /app
 
-COPY . .
+COPY package*.json ./
 RUN npm install
 
-EXPOSE 80
+COPY . .
+
+EXPOSE 3000
+
 CMD ["npm", "start"]
